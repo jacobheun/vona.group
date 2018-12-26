@@ -1,0 +1,39 @@
+{
+  "name": "vona.group",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "run-s clean build:dev build:fonts",
+    "build:dev": "run-p build:html build:sass build:img",
+    "build:fonts": "rsync -r ./node_modules/@fortawesome/fontawesome-free/webfonts dist",
+    "build:html": "pug src --pretty --out dist",
+    "build:sass": "sass src/css/style.scss dist/style.css",
+    "build:img": "rsync -r src/img dist",
+    "watch": "npm-watch",
+    "server": "serve",
+    "start": "run-p server watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "watch": {
+    "build:dev": {
+      "patterns": ["src"],
+      "extensions": "pug,scss"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.5.0",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.15.2",
+    "serve": "^10.1.1",
+    "stylus": "^0.54.5"
+  },
+  "dependencies": {}
+}
