@@ -14,11 +14,13 @@
     "watch": "npm-watch",
     "server": "serve",
     "start": "run-p server watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./link-check.sh"
   },
   "watch": {
     "build:dev": {
-      "patterns": ["src"],
+      "patterns": [
+        "src"
+      ],
       "extensions": "pug,scss"
     }
   },
@@ -27,6 +29,7 @@
   "license": "ISC",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.6.3",
+    "link-checker": "^1.0.0",
     "npm-run-all": "^4.1.5",
     "npm-watch": "^0.5.0",
     "pug": "^2.0.3",
