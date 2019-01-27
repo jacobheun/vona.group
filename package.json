@@ -10,7 +10,7 @@
     "build:fonts": "rsync -r ./node_modules/@fortawesome/fontawesome-free/webfonts dist",
     "build:html": "pug src --pretty --out dist",
     "build:sass": "sass src/css/style.scss dist/style.css",
-    "build:img": "rsync -r src/img dist",
+    "build:img": "rsync -r src/img dist && rsync src/favicon.ico dist",
     "watch": "npm-watch",
     "server": "serve",
     "start": "run-p server watch",
