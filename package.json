@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "run-s clean build:dev build:fonts",
-    "build:dev": "run-p build:html build:sass build:img",
+    "build": "run-s clean build:dev",
+    "build:dev": "run-p build:html build:less build:fonts build:img",
     "build:fonts": "rsync -r ./node_modules/@fortawesome/fontawesome-free/webfonts dist",
     "build:html": "pug src --pretty --out dist",
-    "build:sass": "sass src/css/style.scss dist/style.css",
+    "build:less": "lessc src/css/style.less dist/style.css",
     "build:img": "rsync -r src/img dist && rsync src/favicon.ico dist",
     "watch": "npm-watch",
     "server": "serve",
@@ -21,22 +21,21 @@
       "patterns": [
         "src"
       ],
-      "extensions": "pug,scss"
+      "extensions": "pug,less"
     }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.3",
-    "link-checker": "^1.0.0",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "less": "^4.1.2",
+    "link-checker": "^1.4.2",
     "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.5.0",
-    "pug": "^2.0.3",
+    "npm-watch": "^0.11.0",
+    "pug": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.15.2",
-    "serve": "^10.1.1",
-    "stylus": "^0.54.5"
-  },
-  "dependencies": {}
+    "serve": "^13.0.2",
+    "stylus": "^0.56.0"
+  }
 }
