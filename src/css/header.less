@@ -1,5 +1,5 @@
 .header {
-  background: #000;
+  background: #8db8c7;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
   font-size: 1.8rem;
   padding: 0.1rem 0.2rem;
@@ -12,5 +12,17 @@
 .link--social {
   color: white;
   padding: 0.1rem 0.2rem;
+  position: relative;
   text-decoration: none;
+
+  i::after {
+    content: " ";
+    position: absolute;
+    background: black;
+    top: 0.2em;
+    bottom: 0.2em;
+    left: 0.2em;
+    right: 0.2em;
+    z-index: -1;
+  }
 }
